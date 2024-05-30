@@ -1,0 +1,356 @@
+******************************************************************************
+                  TI ARM Linker PC v20.2.7                     
+******************************************************************************
+>> Linked Wed Aug  9 09:33:19 2023
+
+OUTPUT FILE NAME:   <CAN_test.out>
+ENTRY POINT SYMBOL: "_c_int00_noargs"  address: 000018ed
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00040000  00001c41  0003e3bf  R  X
+  SRAM                  20000000   00008000  0000046c  00007b94  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00001c4c   00001c4c    r-x
+  00000000    00000000    0000026c   0000026c    r-- .intvecs
+  00000270    00000270    00001824   00001824    r-x .text
+  00001a94    00001a94    0000019d   0000019d    r-- .const
+  00001c38    00001c38    00000014   00000014    r-- .cinit
+20000000    20000000    00000470   00000000    rw-
+  20000000    20000000    0000026c   00000000    rw- .vtable
+  20000270    20000270    00000200   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    0000026c     
+                  00000000    0000026c     tm4c123gh6pm_startup_ccs.obj (.intvecs)
+
+.text      0    00000270    00001824     
+                  00000270    00000ba2     xensiv_pasco2.obj (.text)
+                  00000e12    00000006     driverlib.lib : sysctl.obj (.text:SysCtlDelay)
+                  00000e18    00000314     main.obj (.text)
+                  0000112c    00000004     driverlib.lib : i2c.obj (.text:I2CMasterControl)
+                  00001130    0000025a     xensiv_pasco2_platform.obj (.text)
+                  0000138a    00000002     --HOLE-- [fill = 0]
+                  0000138c    0000016c     driverlib.lib : gpio.obj (.text:GPIOPadConfigSet)
+                  000014f8    00000118                   : sysctl.obj (.text:SysCtlClockGet)
+                  00001610    000000f4                   : sysctl.obj (.text:SysCtlClockSet)
+                  00001704    00000068                   : interrupt.obj (.text:IntEnable)
+                  0000176c    0000004c                   : gpio.obj (.text:GPIOPinConfigure)
+                  000017b8    00000046                   : uart.obj (.text:UARTConfigSetExpClk)
+                  000017fe    00000002     --HOLE-- [fill = 0]
+                  00001800    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  00001844    00000040     driverlib.lib : uart.obj (.text:_UARTIntNumberGet)
+                  00001884    00000034                   : interrupt.obj (.text:IntRegister)
+                  000018b8    00000034                   : sysctl.obj (.text:SysCtlPeripheralEnable)
+                  000018ec    00000034     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  00001920    0000002c     driverlib.lib : gpio.obj (.text:GPIODirModeSet)
+                  0000194c    00000020                   : uart.obj (.text:UARTDisable)
+                  0000196c    0000001c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init_nomemset:__TI_zero_init_nomemset)
+                  00001988    0000001a     driverlib.lib : gpio.obj (.text:GPIOPinTypeGPIOOutput)
+                  000019a2    00000004                   : i2c.obj (.text:I2CMasterDataGet)
+                  000019a6    00000002     --HOLE-- [fill = 0]
+                  000019a8    0000001a     tm4c123gh6pm_startup_ccs.obj (.text)
+                  000019c2    00000018     driverlib.lib : uart.obj (.text:UARTIntRegister)
+                  000019da    00000016                   : gpio.obj (.text:GPIOPinTypeUART)
+                  000019f0    00000014                   : uart.obj (.text:UARTEnable)
+                  00001a04    00000010                   : interrupt.obj (.text:IntMasterEnable)
+                  00001a14    0000000e                   : uart.obj (.text:UARTCharGetNonBlocking)
+                  00001a22    0000000e                   : uart.obj (.text:UARTCharPutNonBlocking)
+                  00001a30    0000000e                   : uart.obj (.text:UARTCharsAvail)
+                  00001a3e    0000000e                   : uart.obj (.text:UARTSpaceAvail)
+                  00001a4c    0000000c                   : cpu.obj (.text:CPUcpsie)
+                  00001a58    0000000a                   : uart.obj (.text:UARTCharPut)
+                  00001a62    0000000a                   : uart.obj (.text:UARTIntStatus)
+                  00001a6c    00000008                   : i2c.obj (.text:I2CMasterBusy)
+                  00001a74    00000008                   : i2c.obj (.text:I2CMasterSlaveAddrSet)
+                  00001a7c    00000008                   : uart.obj (.text:UARTIntEnable)
+                  00001a84    00000004                   : i2c.obj (.text:I2CMasterDataPut)
+                  00001a88    00000004                   : uart.obj (.text:UARTIntClear)
+                  00001a8c    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  00001a90    00000004                                   : exit.c.obj (.text:abort:abort)
+
+.const     0    00001a94    0000019d     
+                  00001a94    00000090     driverlib.lib : gpio.obj (.const:g_pui32GPIOBaseAddrs)
+                  00001b24    0000006c                   : sysctl.obj (.const:g_pui32Xtals)
+                  00001b90    00000040                   : uart.obj (.const:g_ppui32UARTIntMap)
+                  00001bd0    00000040                   : uart.obj (.const:g_ppui32UARTIntMapSnowflake)
+                  00001c10    00000014                   : interrupt.obj (.const:g_pui32EnRegs)
+                  00001c24    00000008     xensiv_pasco2.obj (.const:.string:$P$T1$2)
+                  00001c2c    00000005     xensiv_pasco2.obj (.const:.string:$P$T0$1)
+
+.cinit     0    00001c38    00000014     
+                  00001c38    00000008     (.cinit..vtable.load) [load image, compression = zero_init]
+                  00001c40    00000004     (__TI_handler_table)
+                  00001c44    00000008     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.vtable    0    20000000    0000026c     UNINITIALIZED
+                  20000000    0000026c     driverlib.lib : interrupt.obj (.vtable)
+
+.stack     0    20000270    00000200     UNINITIALIZED
+                  20000270    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  20000274    000001fc     --HOLE--
+
+__llvm_prf_cnts 
+*          0    20000000    00000000     UNINITIALIZED
+
+MODULE SUMMARY
+
+       Module                         code   ro data   rw data
+       ------                         ----   -------   -------
+    .\
+       main.obj                       788    0         0      
+       tm4c123gh6pm_startup_ccs.obj   26     620       0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         814    620       0      
+                                                              
+    .\drivers\
+       xensiv_pasco2.obj              2978   13        0      
+       xensiv_pasco2_platform.obj     602    0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         3580   13        0      
+                                                              
+    ../driverlib.lib
+       interrupt.obj                  172    20        620    
+       sysctl.obj                     582    108       0      
+       gpio.obj                       532    144       0      
+       uart.obj                       298    128       0      
+       i2c.obj                        28     0         0      
+       cpu.obj                        12     0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         1624   400       620    
+                                                              
+    E:\NAMHOC\Nam_BK\laptrinhnhung\Tool\ccs\tools\compiler\ti-cgt-arm_20.2.7.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       autoinit.c.obj                 68     0         0      
+       boot_cortex_m.c.obj            52     0         0      
+       copy_zero_init.c.obj           28     0         0      
+       exit.c.obj                     4      0         0      
+       pre_init.c.obj                 4      0         0      
+    +--+------------------------------+------+---------+---------+
+       Total:                         156    0         0      
+                                                              
+       Stack:                         0      0         512    
+       Linker Generated:              0      20        0      
+    +--+------------------------------+------+---------+---------+
+       Grand Total:                   6174   1053      1132   
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00001c44 records: 1, size/record: 8, table size: 8
+	.vtable: load addr=00001c38, load size=00000008 bytes, run addr=20000000, run size=0000026c bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00001c40 records: 1, size/record: 4, table size: 4
+	index: 0, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                                     
+-------   ----                                     
+00001a91  C$$EXIT                                  
+00001a4d  CPUcpsie                                 
+00001921  GPIODirModeSet                           
+0000138d  GPIOPadConfigSet                         
+0000176d  GPIOPinConfigure                         
+00001989  GPIOPinTypeGPIOOutput                    
+000019db  GPIOPinTypeUART                          
+00001a6d  I2CMasterBusy                            
+0000112d  I2CMasterControl                         
+000019a3  I2CMasterDataGet                         
+00001a85  I2CMasterDataPut                         
+00001a75  I2CMasterSlaveAddrSet                    
+00001705  IntEnable                                
+00001a05  IntMasterEnable                          
+00001885  IntRegister                              
+000019a9  ResetISR                                 
+000014f9  SysCtlClockGet                           
+00001611  SysCtlClockSet                           
+00000e13  SysCtlDelay                              
+000018b9  SysCtlPeripheralEnable                   
+00001a15  UARTCharGetNonBlocking                   
+00001a59  UARTCharPut                              
+00001a23  UARTCharPutNonBlocking                   
+00001a31  UARTCharsAvail                           
+000017b9  UARTConfigSetExpClk                      
+0000194d  UARTDisable                              
+000019f1  UARTEnable                               
+00001a89  UARTIntClear                             
+00001a7d  UARTIntEnable                            
+00000e19  UARTIntHandler                           
+000019c3  UARTIntRegister                          
+00001a63  UARTIntStatus                            
+00001a3f  UARTSpaceAvail                           
+20000470  __STACK_END                              
+00000200  __STACK_SIZE                             
+20000470  __STACK_TOP                              
+00001c44  __TI_CINIT_Base                          
+00001c4c  __TI_CINIT_Limit                         
+00001c40  __TI_Handler_Table_Base                  
+00001c44  __TI_Handler_Table_Limit                 
+00001801  __TI_auto_init_nobinit_nopinit           
+ffffffff  __TI_pprof_out_hndl                      
+ffffffff  __TI_prof_data_size                      
+ffffffff  __TI_prof_data_start                     
+00000000  __TI_static_base__                       
+0000196d  __TI_zero_init_nomemset                  
+ffffffff  __binit__                                
+ffffffff  __c_args__                               
+UNDEFED   __mpu_init                               
+20000270  __stack                                  
+20000000  __start___llvm_prf_cnts                  
+20000000  __stop___llvm_prf_cnts                   
+000018ed  _c_int00_noargs                          
+UNDEFED   _system_post_cinit                       
+00001a8d  _system_pre_init                         
+00001a91  abort                                    
+ffffffff  binit                                    
+20000000  g_pfnRAMVectors                          
+00000000  g_pfnVectors                             
+00000e49  main                                     
+00000ab1  xensiv_pasco2_clear_measurement_status   
+000008e1  xensiv_pasco2_clear_status               
+00000be1  xensiv_pasco2_cmd                        
+00000871  xensiv_pasco2_get_id                     
+00000909  xensiv_pasco2_get_interrupt_config       
+00000969  xensiv_pasco2_get_measurement_config     
+00000a79  xensiv_pasco2_get_measurement_status     
+00000821  xensiv_pasco2_get_reg                    
+000009c9  xensiv_pasco2_get_result                 
+00000ba9  xensiv_pasco2_get_scratch_pad            
+000008a9  xensiv_pasco2_get_status                 
+00000731  xensiv_pasco2_init_i2c                   
+00000781  xensiv_pasco2_init_uart                  
+00000d39  xensiv_pasco2_perform_forced_compensation
+00001381  xensiv_pasco2_plat_assert                
+00001339  xensiv_pasco2_plat_delay                 
+00001359  xensiv_pasco2_plat_htons                 
+00001131  xensiv_pasco2_plat_i2c_transfer          
+00001279  xensiv_pasco2_plat_uart_read             
+000012e1  xensiv_pasco2_plat_uart_write            
+00000ad9  xensiv_pasco2_set_alarm_threshold        
+00000941  xensiv_pasco2_set_interrupt_config       
+000009a1  xensiv_pasco2_set_measurement_config     
+00000a29  xensiv_pasco2_set_measurement_rate       
+00000b49  xensiv_pasco2_set_offset_compensation    
+00000b11  xensiv_pasco2_set_pressure_compensation  
+000007d1  xensiv_pasco2_set_reg                    
+00000b81  xensiv_pasco2_set_scratch_pad            
+00000c81  xensiv_pasco2_start_continuous_mode      
+00000c09  xensiv_pasco2_start_single_mode          
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                                     
+-------   ----                                     
+00000000  __TI_static_base__                       
+00000000  g_pfnVectors                             
+00000200  __STACK_SIZE                             
+00000731  xensiv_pasco2_init_i2c                   
+00000781  xensiv_pasco2_init_uart                  
+000007d1  xensiv_pasco2_set_reg                    
+00000821  xensiv_pasco2_get_reg                    
+00000871  xensiv_pasco2_get_id                     
+000008a9  xensiv_pasco2_get_status                 
+000008e1  xensiv_pasco2_clear_status               
+00000909  xensiv_pasco2_get_interrupt_config       
+00000941  xensiv_pasco2_set_interrupt_config       
+00000969  xensiv_pasco2_get_measurement_config     
+000009a1  xensiv_pasco2_set_measurement_config     
+000009c9  xensiv_pasco2_get_result                 
+00000a29  xensiv_pasco2_set_measurement_rate       
+00000a79  xensiv_pasco2_get_measurement_status     
+00000ab1  xensiv_pasco2_clear_measurement_status   
+00000ad9  xensiv_pasco2_set_alarm_threshold        
+00000b11  xensiv_pasco2_set_pressure_compensation  
+00000b49  xensiv_pasco2_set_offset_compensation    
+00000b81  xensiv_pasco2_set_scratch_pad            
+00000ba9  xensiv_pasco2_get_scratch_pad            
+00000be1  xensiv_pasco2_cmd                        
+00000c09  xensiv_pasco2_start_single_mode          
+00000c81  xensiv_pasco2_start_continuous_mode      
+00000d39  xensiv_pasco2_perform_forced_compensation
+00000e13  SysCtlDelay                              
+00000e19  UARTIntHandler                           
+00000e49  main                                     
+0000112d  I2CMasterControl                         
+00001131  xensiv_pasco2_plat_i2c_transfer          
+00001279  xensiv_pasco2_plat_uart_read             
+000012e1  xensiv_pasco2_plat_uart_write            
+00001339  xensiv_pasco2_plat_delay                 
+00001359  xensiv_pasco2_plat_htons                 
+00001381  xensiv_pasco2_plat_assert                
+0000138d  GPIOPadConfigSet                         
+000014f9  SysCtlClockGet                           
+00001611  SysCtlClockSet                           
+00001705  IntEnable                                
+0000176d  GPIOPinConfigure                         
+000017b9  UARTConfigSetExpClk                      
+00001801  __TI_auto_init_nobinit_nopinit           
+00001885  IntRegister                              
+000018b9  SysCtlPeripheralEnable                   
+000018ed  _c_int00_noargs                          
+00001921  GPIODirModeSet                           
+0000194d  UARTDisable                              
+0000196d  __TI_zero_init_nomemset                  
+00001989  GPIOPinTypeGPIOOutput                    
+000019a3  I2CMasterDataGet                         
+000019a9  ResetISR                                 
+000019c3  UARTIntRegister                          
+000019db  GPIOPinTypeUART                          
+000019f1  UARTEnable                               
+00001a05  IntMasterEnable                          
+00001a15  UARTCharGetNonBlocking                   
+00001a23  UARTCharPutNonBlocking                   
+00001a31  UARTCharsAvail                           
+00001a3f  UARTSpaceAvail                           
+00001a4d  CPUcpsie                                 
+00001a59  UARTCharPut                              
+00001a63  UARTIntStatus                            
+00001a6d  I2CMasterBusy                            
+00001a75  I2CMasterSlaveAddrSet                    
+00001a7d  UARTIntEnable                            
+00001a85  I2CMasterDataPut                         
+00001a89  UARTIntClear                             
+00001a8d  _system_pre_init                         
+00001a91  C$$EXIT                                  
+00001a91  abort                                    
+00001c40  __TI_Handler_Table_Base                  
+00001c44  __TI_CINIT_Base                          
+00001c44  __TI_Handler_Table_Limit                 
+00001c4c  __TI_CINIT_Limit                         
+20000000  __start___llvm_prf_cnts                  
+20000000  __stop___llvm_prf_cnts                   
+20000000  g_pfnRAMVectors                          
+20000270  __stack                                  
+20000470  __STACK_END                              
+20000470  __STACK_TOP                              
+ffffffff  __TI_pprof_out_hndl                      
+ffffffff  __TI_prof_data_size                      
+ffffffff  __TI_prof_data_start                     
+ffffffff  __binit__                                
+ffffffff  __c_args__                               
+ffffffff  binit                                    
+UNDEFED   __mpu_init                               
+UNDEFED   _system_post_cinit                       
+
+[90 symbols]
